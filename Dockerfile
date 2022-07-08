@@ -19,7 +19,6 @@ RUN yarn install
 
 COPY . .
 
-COPY .env  ./
-
 EXPOSE 5002
+
 CMD yarn start
