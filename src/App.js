@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react'
 import GetDataPhotos from './Data'
-import Gallery from './Gallery'
 function App() {
   return (
     <div>
