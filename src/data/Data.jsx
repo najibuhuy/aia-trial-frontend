@@ -1,14 +1,18 @@
-import './gallery.css'
 import {useState, useEffect} from 'react';
-import Gallery from './Gallery';
-import {staticToken, urlApi} from './api'
+import Gallery from '../gallery/Gallery';
+import {staticToken, urlApi} from '../api'
+import CircularProgress from '@mui/material/CircularProgress';
+
 const axios = require('axios');
 
-export default function GetDataPhotos() {
+export default function GetDataPhotos(props) {
     const [isLoading, setIsLoading] = useState(true) // [current, update]
     const [loadedDetail, setLoadedDetail] = useState([])
+
+   
     const token = staticToken
-    const urlApiPhoto = urlApi
+    const urlApiPhoto = `${urlApi}:${props.data}`
+    
     useEffect(() => {
       setIsLoading(true);
   
@@ -32,13 +36,13 @@ export default function GetDataPhotos() {
       }).catch(error => {
         console.log(error.response, "error")
       })
-    }, [])
+    }, [props.data])
   
     if(isLoading){
       return (
-        <section>
-          <p>Loading ...</p>
-        </section>
+        <section >
+        <CircularProgress className='loading'/>
+      </section>
       )
     }
         
