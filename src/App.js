@@ -9,7 +9,7 @@ function App() {
   return (
     <div className='background'>
        <h1 className='title'> Flickr Public Photo</h1>
-       <h1 className='subtitle'> Search photos what you want from Flickr Public photos </h1>
+       <h1 className='subtitle'> Search photos whatever you want from Flickr Public photos </h1>
 
        <div className='search'>
           <input type="search"                      
